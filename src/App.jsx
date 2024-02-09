@@ -1,12 +1,13 @@
 
 import './App.css'
-import Couter from './features/counter/couter'
+// import Couter from './features/counter/couter'
+import TodoList from './features/to-do-list/Todo-List'
 
 function App() {
 
   return (
     <>
-      <Couter/>
+       <TodoList/>
     </>
   )
 }

@@ -1,14 +1,17 @@
-import { useDispatch, useSelector } from "react-redux"
-import { increment, decrement } from "./counterSlice"
+import { increment, decrement, incrementByPayload } from "./counterSlice"
+import {useDispatch, useSelector} from 'react-redux'
 
 function Couter() {
-    const count = useSelector((state)=>state.counter.value)
+
     const dispatch = useDispatch()
+    const cout = useSelector((state)=>state.counter.value)
+
   return (
     <div>
-        <button onClick={()=>dispatch(increment())}>Increment value</button>
-        <button onClick={()=> dispatch(decrement())}>Decrement value</button>
-        <h4>{count}</h4>
+        <button onClick={()=>dispatch(increment())}>increment</button>
+        <button onClick={()=> dispatch(decrement())}>decrement</button>
+        <button onClick={()=>dispatch(incrementByPayload(10))}>add 10</button>
+        <h3>{cout}</h3>
     </div>
   )
 }
